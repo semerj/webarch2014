@@ -1,0 +1,9 @@
+HW 1
+
+Name: John Semerdjian
+Class: INFO 253
+Date: 8/30/14
+
+1. I have very little experience with web architecture. I've done some simply web scraping (using Python, Selenium, and PhantomJS) and have interacted with various APIs (Twitter, NYTimes, etc.). Aside from fooling around with D3 visualizations, I've never written any HTML or Javascript.
+
+2. My favoriate feature of Tor is the ability to browse the internet anonymously. The NSA leaks documenting the government's ability to monitor your online activity have concerned me, and I began using Tor more often as a result. The second browser feature I like are the developer tools in Google Chrome. Among the many features, one can quickly identify elements in the DOM, which is useful for web scraping. In addition, under the 'Network' tab, I've been able to quickly identify and download useful documents that contain data (JSON, CSV, XML) I'm interested in analyzing. For example, points on a map on a particular website may be contained in a JSON file that I can inspect and download for further analysis. 
