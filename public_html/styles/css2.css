@@ -1,0 +1,25 @@
+body {
+	color: black;
+	text-align: center;
+	font-family: "Courier New", Courier, monospace;
+}
+
+h1	{
+	font-size: 1em;
+}
+
+body h1	{
+	font-size: 3em;
+}
+
+a	{ text-decoration: underline; color: black;}
+
+a:hover	{ text-decoration: none; color: red;}
+
+img {
+    opacity: 1.0;
+}
+
+img:hover {
+    opacity: 0.4;
+}

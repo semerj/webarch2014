@@ -1,0 +1,18 @@
+/* id attribute */
+#image	{
+	height: 25%;
+	width: 25%;
+}
+
+/* id attribute */
+#mylist	li {
+	display: inline;
+	text-align: center;
+}
+
+/* class attribute */
+.interests {
+	display: table;
+	margin: 0 auto;
+	text-align: left;
+}
