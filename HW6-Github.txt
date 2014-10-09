@@ -47,5 +47,5 @@
 
 4. Use the Commits resource to find what the message was of the first commit to the webarch253 repository owned by jblomo.
 
-	$ curl -i "https://api.github.com/repos/jblomo/webarch253/commits?until=2013-01-01T00:00:00Z" | grep 'message' | tail -n 1
-		"message": "reading",
+	$ curl -i "https://api.github.com/repos/jblomo/webarch253/commits?until=2012-09-01T00:00:00Z" | grep 'message' | tail -n 1
+		"message": "initial",
