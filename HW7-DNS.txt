@@ -1,0 +1,53 @@
+Questions
+
+1. What series of IPs would a recursive DNS server use to find the address of m.yelp.com?
+
+    $ host -v -t A people.ischool.berkeley.edu 199.7.83.42
+
+    ;; ADDITIONAL SECTION:
+    a.edu-servers.net.      172800  IN      A       192.5.6.30
+    c.edu-servers.net.      172800  IN      A       192.26.92.30
+    d.edu-servers.net.      172800  IN      A       192.31.80.30
+    f.edu-servers.net.      172800  IN      A       192.35.51.30
+    g.edu-servers.net.      172800  IN      A       192.42.93.30
+    l.edu-servers.net.      172800  IN      A       192.41.162.30
+    g.edu-servers.net.      172800  IN      AAAA    2001:503:cc2c::2:36
+
+    $ host -v -t A people.ischool.berkeley.edu 192.5.6.30
+
+    ;; ADDITIONAL SECTION:
+    phloem.uoregon.edu.     172800  IN      A       128.223.32.35
+    phloem.uoregon.edu.     172800  IN      AAAA    2001:468:d01:20::80df:2023
+    adns1.berkeley.edu.     172800  IN      A       128.32.136.3
+    adns2.berkeley.edu.     172800  IN      A       128.32.136.14
+    ns.v6.berkeley.edu.     172800  IN      A       128.32.136.6
+    ns.v6.berkeley.edu.     172800  IN      AAAA    2607:f140:ffff:fffe::6
+    aodns1.berkeley.edu.    172800  IN      A       192.35.225.133
+    aodns1.berkeley.edu.    172800  IN      AAAA    2607:f010:3f8:8000::ff:fe00:53
+    aodns2.berkeley.edu.    172800  IN      A       128.253.35.148
+
+    $ host -v -t A people.ischool.berkeley.edu 128.32.136.3
+
+    ;; ANSWER SECTION:
+    people.ischool.berkeley.edu. 3600 IN    CNAME   harbinger.ischool.berkeley.edu.
+    harbinger.ischool.berkeley.edu. 3600 IN A       128.32.78.16
+
+
+2. What are the IP addresses of m.yelp.com?
+
+    199.255.189.34
+    199.255.189.234
+
+
+3. Do IP packets leave the Berkeley network when traveling to amplab.cs.berkeley.edu from harbinger.ischool.berkeley.ede? Include the command and output.
+
+    No
+
+    $ traceroute amplab.cs.berkeley.edu
+
+    raceroute to amplab.cs.berkeley.edu (128.32.37.248), 30 hops max, 60 byte packets
+    1  g3-35.inr-211-srb.Berkeley.EDU (128.32.78.3)  0.659 ms  0.644 ms  0.736 ms
+    2  t6-1.inr-202-reccev.Berkeley.EDU (128.32.255.126)  129.146 ms  129.215 ms  129.200 ms
+    3  evans-eecs-br-10GE.EECS.Berkeley.EDU (128.32.255.54)  2.059 ms  2.047 ms  2.026 ms
+    4  soda-10g-edge.EECS.Berkeley.EDU (169.229.59.242)  3.905 ms  3.919 ms  3.930 ms
+    5  www-research2.CS.Berkeley.EDU (128.32.37.248)  2.436 ms !X  2.457 ms !X  3.043 ms !X
