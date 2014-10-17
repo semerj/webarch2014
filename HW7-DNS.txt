@@ -4,7 +4,7 @@ Questions
 
     $ host -v -t A m.yelp.com 199.7.83.42
     
-    ;; AUTHORITY SECTION:
+    ;; AUTHORITY SECTION:  
     com.                    172800  IN      NS      a.gtld-servers.net.
 
     ;; ADDITIONAL SECTION:
