@@ -1,0 +1,42 @@
+1. What HTTP command is used to make the /home resource respond with your full name (including spaces), the title of the page should be the full title of this class.
+
+	GET /home?name=John%20Semerdjian&title=i253 HTTP/1.1
+	Host: ischool.berkeley.edu
+
+
+
+2. Use a PUT request to set the redirect target of http://people.ischool.berkeley.edu/~jsemer/server/wiki
+
+	PUT /wiki HTTP/1.1
+	Host: localhost
+	Content-Length: 23
+	Content-Type: application/x-www-form-urlencoded
+
+	url=http://nytimes.com/
+
+	1. How do you verify this change?
+		
+		GET /wiki HTTP/1.1
+		Host: ischool.berkeley.edu
+
+
+
+3. Use a POST to update the redirect target of http://people.ischool.berkeley.edu/~jsemer/server/wiki to a another new location.
+
+	POST /wiki HTTP/1.1
+	Host: localhost
+	Content-Length: 22
+	Content-Type: application/x-www-form-urlencoded
+
+	url=http://google.com/
+
+
+
+4. Update app.py to correctly return an image from http://people.ischool.berkeley.edu/~jsemer/server/i253
+	
+	Updated line 77 to:
+	resp.headers['Content-Type'] = 'image/jpeg'
+
+	GET /i253 HTTP/1.1
+	Host: ischool.berkeley.edu
+	Content-Type: image/jepg
