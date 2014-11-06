@@ -1,0 +1,28 @@
+SELECT
+
+    1. How many links were added afer 2014-10-14?
+
+    mysql> select count(*) from links where created > '2014-10-14';
+    result: 12
+
+    2. How many links that were added before 2014-10-14 have fewer than 40 hits?
+
+    mysql> select count(*) from links where created < '2014-10-14' and hit_count < 40;
+    result: 4
+
+INSERT
+
+    1. Insert your own URL with a date before 2014-10-14 with greater than 40 hits.
+
+    mysql> insert into links (long_url, short_url, hit_count, created) values ('www.pizza.com', 'zaa', 41, '2014-10-13');
+
+    2. Is it possible that someone querying the database at the same time could see your insert partially complete (eg. only see some fields filled in)? What database property is this related to? 
+
+    No. This is related to the atomicity principle within ACID properties. My query/transaction would never be partially completed - it's all or nothing.
+
+UPDATE
+
+    1. Increment the hit_count for only your new row. What is the new count?
+
+    mysql> update links set hit_count=hit_count+1 where long_url='www.pizza.com';
+    result: 42
