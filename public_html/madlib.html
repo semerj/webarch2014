@@ -8,33 +8,53 @@
     </head>
     <body>
 		<form id="madlib-input">
-			<p>Please Input your answers below!</p>
-			<!-- inputs... -->
+			<p>First person or someone you know:<input type="text" name="firstname"></p>
+			
+			<p id="sex">Is the person male or female:</p>
+
+			<input type="radio" name="sex" value="male">male<br>
+			<input type="radio" name="sex" value="female">female<br>
+
+			<p>Random number:<input type="number" name="random_num"></p>
+
+			<p>Second person or someone you know:<input type="text" name="secondname"></p>
+
+			<p id="outside">What's the day like outside:</p>
+
+			<input type="radio" name="weather" value="bright and sunny">bright and sunny<br>
+			<input type="radio" name="weather" value="cold and cloudy">cold and cloudy
+			
+			<p>
+				<label for="activity">Choose an activity:</label>
+				<select name="activity" id="activity">
+					<option value="running">Running</option>
+					<option value="humming">Humming</option>
+					<option value="sailing">Sailing</option>
+				</select>
+			</p>
+
+			<p>Think of an animal:<input type="text" name="animal"></p>
+
+			<p>Check things you like:</p>
+			<input type="checkbox" value="pancakes" id="box1">
+			<label for="box1">Pancakes</label>
+
+			<input type="checkbox" value="unicorns" id="box2">
+			<label for="box2">Unicorns</label>
+			
+			<input type="checkbox" value="motorbikes" id="box3">
+			<label for="box3">Motorbikes</label>
+			
+			<input type="checkbox" value="umbrellas" id="box4">
+			<label for="box4">Umbrellas</label>
+
+			<p><input type="submit" value="My Madlib!"></p>
 		</form>
-		
+
 		<div id="madlib-output">
 		</div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<!-- Optionally include other scripts
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="js/main.js"></script>
-		-->
-
-        <!-- You may add Javascript functions below -->
-        <script>
-			function validate() {
-				if ($("input:first").val() == "correct") {
-					$("#madlib-output").text("input: correct");
-				} else {
-					alert("Error!");
-				}
-				return false;
-			}
-
-			$(document).ready(function() {
-				$("#madlib-input").submit(validate);
-				console.log("ready!");
-			});
-        </script>
     </body>
 </html>
